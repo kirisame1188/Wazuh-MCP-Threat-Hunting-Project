@@ -69,7 +69,11 @@ git clone [https://github.com/kirisame1188/Wazuh-MCP-Threat-Hunting-Project.git]
 cd Wazuh-MCP-Threat-Hunting-Project
 ```
 ## Demo
-結合claude+mcp分析wazuh
-1.列出所有 Agent 狀態，用於確認環境監控範圍
-2.獲取最近的資安警報,用於威脅獵捕分析 (Threat Hunting)
-3.生成報告
+**結合claude+mcp分析wazuh**
+
+1. 列出所有 Agent 狀態，用於確認環境監控範圍。
+
+2. 獲取最近的資安警報,用於威脅獵捕分析 (Threat Hunting)。
+
+3. 生成威脅獵捕報告。
+
