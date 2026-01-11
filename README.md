@@ -77,5 +77,6 @@ cd Wazuh-MCP-Threat-Hunting-Project
 <img width="897" height="677" alt="螢幕擷取畫面 2026-01-11 185537" src="https://github.com/user-attachments/assets/6def1e5b-736f-4ae9-b772-2f41d7646789" />
 <img width="1015" height="801" alt="螢幕擷取畫面 2026-01-11 185555" src="https://github.com/user-attachments/assets/ba5f76b4-b4ac-46b6-9d55-e18489dd45aa" />
 <img width="841" height="680" alt="螢幕擷取畫面 2026-01-11 185631" src="https://github.com/user-attachments/assets/14b058ab-ed50-4d1a-b4ae-eac7b48b92bd" />
+
 3. 生成威脅獵捕報告。
 <img width="919" height="958" alt="螢幕擷取畫面 2026-01-11 194648" src="https://github.com/user-attachments/assets/a5e623c3-1870-4272-85c5-96193080478e" />
