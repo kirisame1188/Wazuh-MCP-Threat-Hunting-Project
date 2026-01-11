@@ -1,1 +1,0 @@
-# Wazuh-MCP-Threat-Hunting-Project
