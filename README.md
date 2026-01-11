@@ -19,6 +19,38 @@
 - [ ] **(未來規劃)** 自動化封鎖 IP 功能。
 
 ## 🛠️ 技術架構 (Architecture)
+
+```mermaid
+graph LR
+    %% 定義樣式
+    classDef ai fill:#E1F5FE,stroke:#01579B,stroke-width:2px;
+    classDef mcp fill:#FFF3E0,stroke:#FF6F00,stroke-width:2px;
+    classDef wazuh fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
+
+    subgraph User_Layer [1. Interaction Layer]
+        User(("User/Analyst"))
+        Claude["🤖 AI Agent<br/>(Claude Desktop)"]:::ai
+    end
+
+    subgraph Integration_Layer [2. Integration Layer]
+        MCP["⚙️ MCP Server<br/>(Python/FastMCP)"]:::mcp
+        Tools["🛠️ Tools Logic<br/>- Alert Filtering<br/>- Agent Query"]:::mcp
+    end
+
+    subgraph Infrastructure_Layer [3. Data Layer]
+        API["🔌 Wazuh API"]:::wazuh
+        Manager["🛡️ Wazuh Manager"]:::wazuh
+        Logs[("🗄️ Security Logs")]:::wazuh
+    end
+
+    %% 連線
+    User -->|"Natural Language Query"| Claude
+    Claude <-->|"MCP Protocol (JSON-RPC)"| MCP
+    MCP <-->|"Internal Function Call"| Tools
+    Tools <-->|"HTTPS / REST API"| API
+    API <-->|"Query Data"| Manager
+    Manager <-->|"Read"| Logs
+```
 - **語言**: Python
 - **協定**: Model Context Protocol (MCP)
 - **資料來源**: Wazuh SIEM / Indexer
@@ -35,3 +67,9 @@
 ```bash
 git clone [https://github.com/kirisame1188/Wazuh-MCP-Threat-Hunting-Project.git](https://github.com/kirisame1188/Wazuh-MCP-Threat-Hunting-Project.git)
 cd Wazuh-MCP-Threat-Hunting-Project
+```
+## Demo
+結合claude+mcp分析wazuh
+1.列出所有 Agent 狀態，用於確認環境監控範圍
+2.獲取最近的資安警報,用於威脅獵捕分析 (Threat Hunting)
+3.生成報告
